@@ -1,73 +1,26 @@
 import React from 'react'
-import {useState} from 'react'
 
-const Form = (props) => {
+const Form = () => {
 
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [genre, setGenre] = useState('');
-    const [image, setImage] = useState('');
-    
   return (
-    <div className="formDiv">
-    <form>
-        <h1>Add a new Movie</h1>
-        <div className="formGroup">
-            <label htmlFor="title">Title</label>
-            <input 
-                onChange={(e)=>setTitle(e.target.value)} 
-                type="text" 
-                className="form-control" 
-                id="title" 
-                placeholder="Enter Title" 
-            />
-        </div>
-        <div className="formGroup">
-            <label htmlFor="description">Description</label>
-            <input
-                onChange={(e)=>setDescription(e.target.value)} 
-                type="text" 
-                className="form-control" 
-                id="description" 
-                placeholder="Enter Description" 
-            />
-        </div>
-        <div className="formGroup">
-            <label htmlFor="genre">Genre</label>
-            <input 
-                onChange={(e)=>setGenre(e.target.value)}
-                type="text" 
-                className="form-control" 
-                id="genre" 
-                placeholder="Enter Genre" 
-            />
-        </div>
-        <div className="formGroup">
-            <label htmlFor="image">Image</label>
-            <input 
-                onChange={(e)=>setImage(e.target.value)}
-                type="file" 
-                className="formControl" 
-                id="image" 
-                placeholder="Enter Image" 
-            />
-        </div>
-        <button 
-            onClick={(e)=>{
-                console.log(props)
-                e.preventDefault();
-                props.addMovie(title, description, genre, image)
-                setTitle('');
-                setDescription('');
-                setGenre('');
-                setImage('');
-            }}
-            type="submit" 
-            className="btn btn-primary"
-            >
-            Submit
-            </button>
-    </form>
+    <div className="form">
+        <form>
+            <div className="form-group">
+                <label title='Title'>Title</label>
+                <input type="text" className="form-control" placeholder="Title" />
+
+                <label title='Year'>Year</label>
+                <input type="text" className="form-control" placeholder="Year" />
+
+                <label title='Description'>Description</label>
+                <input type="text" className="form-control" placeholder="Description" />
+
+                <label title='Poster'>Poster</label>
+                <input type={'file'} className="form-control" placeholder="Poster" />
+
+                <button type="submit" className="btn btn-primary">Submit</button>
+            </div>
+        </form>
     </div>
     )
 }

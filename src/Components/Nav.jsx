@@ -13,13 +13,13 @@ export const Nav = () => {
             {/* <span>{items.length}</span> */}
         </Link>
         <Link to={"/"} className="navbar-items">
-            <h1>Home</h1>
+            <h2>Home</h2>
         </Link>
         <Link to={"/Favorite"} className="navbar-items">
-            <h1>Favorite</h1>
+            <h2>Favorite</h2>
         </Link>
         <Link to={"/Form"} className="navbar-items">
-            <h1>Form</h1>
+            <h2>Form</h2>
         </Link>
 
         <input className="search" type="text" placeholder="Search" />

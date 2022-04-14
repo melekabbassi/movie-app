@@ -3,6 +3,7 @@ import Nav from './Components/Nav';
 import Movies from './Components/Movies';
 import Favorite from './Components/Favorite';
 import Form from './Components/Form';
+
 import { FavoriteProvider } from './FavoriteContext';
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -20,6 +21,8 @@ function App() {
         </Switch>
         </BrowserRouter>
         </FavoriteProvider>
+
+        <Form />
       </div>
    
   );
