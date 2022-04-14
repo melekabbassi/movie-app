@@ -1,5 +1,5 @@
 import React from 'react'
-import {IoShirtOutline} from 'react-icons/io'
+import {IoIosAlbums} from 'react-icons/io'
 import {AiFillHeart} from 'react-icons/ai'
 import { useContext } from 'react'
 import FavoriteContext from '../FavoriteContext'
@@ -11,7 +11,7 @@ const Card = ({title, year}) => {
   return (
     <div className='card'>
         <div className='movie-box'>
-            <IoShirtOutline />
+            <IoIosAlbums />
         </div>
         <div className='movie-info'>
             <h1>{title}</h1>
