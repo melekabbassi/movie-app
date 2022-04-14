@@ -1,24 +1,35 @@
 import React from 'react'
-import {IoIosAlbums} from 'react-icons/io'
 import {AiFillHeart} from 'react-icons/ai'
 import { useContext } from 'react'
 import FavoriteContext from '../FavoriteContext'
+import Star from '@mui/icons-material/Star';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+
 
 const Card = ({title, year}) => {
 
-    const {addToFavorite} = useContext(FavoriteContext);
+    //const {addToFavorite} = useContext(FavoriteContext);
 
   return (
+  <div>   
     <div className='card'>
         <div className='movie-box'>
-            <IoIosAlbums />
+            
         </div>
         <div className='movie-info'>
-            <h1>{title}</h1>
-            <AiFillHeart onClick={() => addToFavorite(title, year)} />
+            
+            
+            
         </div>
-        <h2>${year}</h2>
+        <h2>${year}</h2>    
     </div>
+    <div className='caption'>
+      <StarBorderIcon className='Star' />
+      <br />
+      <Star className='Fill-Star' />
+    </div> 
+  </div>
+
   )
 }
 

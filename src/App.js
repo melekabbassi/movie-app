@@ -1,6 +1,7 @@
 import './App.css';
 import Nav from './Components/Nav';
 import Movies from './Components/Movies';
+import Card from './Components/Card';
 import Favorite from './Components/Favorite';
 import Form from './Components/Form';
 
@@ -11,6 +12,7 @@ function App() {
   return (
     
       <div className="App">
+      <div className="container">
       <FavoriteProvider>
       <BrowserRouter>
         <Nav />
@@ -21,10 +23,13 @@ function App() {
         </Switch>
         </BrowserRouter>
         </FavoriteProvider>
-
-        <Form />
       </div>
-   
+
+      <div className="Cards">
+        <Card />
+        <Card />
+      </div>
+      </div>
   );
 }
 

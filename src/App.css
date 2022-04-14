@@ -11,7 +11,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-shake infinite 20s linear;
   }
 }
 
@@ -173,4 +173,45 @@ label{
   color: #fff;
   background-color: #00708f;
   border-color: #00708f;
+}
+
+.card {
+  margin-top: 5rem;
+  margin-left: 5rem;
+  margin-right: 2rem;
+  border-radius: 1rem;
+  border-color: #282c34;
+  box-shadow: 0px 10px 30px rgba(0,0,0, 0.5) ;
+  height: 25rem;
+  width: 15%;
+}
+
+.Star{
+  display: block;
+  margin-top: 0.3rem;
+  margin-right: 75rem;
+  color: #0088a9;
+  cursor: pointer;
+}
+.Star:hover{
+  color: #282c34;
+  display: block;
+  margin-top: 0.3rem;
+  margin-right: 75rem;
+  cursor: pointer;
+}
+
+.Fill-Star{
+  display: block;
+  margin-top: 0.3rem;
+  margin-right: 75rem;
+  color: #0088a9;
+  cursor: pointer;
+}
+.Fill-Star:hover{
+  color: #282c34;
+  display: block;
+  margin-top: 0.3rem;
+  margin-right: 75rem;
+  cursor: pointer;
 }
