@@ -5,7 +5,6 @@ import FavoriteContext from '../FavoriteContext'
 import Star from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 
-
 const Card = ({title, year}) => {
 
     //const {addToFavorite} = useContext(FavoriteContext);
