@@ -26,8 +26,7 @@ function App() {
       </div>
 
       <div className="Cards">
-        <Card />
-        <Card />
+        <Movies />
       </div>
       </div>
   );
