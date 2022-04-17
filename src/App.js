@@ -13,11 +13,11 @@ function App() {
 
   const addMovie = (title, year, rating, image, description) => {
     const newMovie = {
-      title,
-      year,
-      description,
-      image,
-      rating
+      title: title,
+      year: year,
+      description: description,
+      image: image,
+      rating: rating
     };
     setMovies(movies.concat(newMovie));
   }
