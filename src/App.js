@@ -1,34 +1,35 @@
 import './App.css';
 import Nav from './Components/Nav';
 import Movies from './Components/Movies';
-import Card from './Components/Card';
 import Favorite from './Components/Favorite';
 import Form from './Components/Form';
-
-import { FavoriteProvider } from './FavoriteContext';
+import FormModal from './Components/FormModal';
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    
+    <BrowserRouter>
       <div className="App">
-      <div className="container">
-      <FavoriteProvider>
-      <BrowserRouter>
         <Nav />
+      <div className="container">      
         <Switch>
-          <Route path="/" element={<Movies />} />
-          <Route path="/Favorite" element={<Favorite />} />
-          <Route path="/Form" element={<Form />} />
+          <Route path="/">
+            <Movies />
+          </Route>
+
+          <Route path="/Favorite">
+            <Favorite />
+          </Route>
+          <Route path="/Form" element={<Form />}>
+            <Form />
+          </Route>
         </Switch>
-        </BrowserRouter>
-        </FavoriteProvider>
       </div>
 
-      <div className="Cards">
-        <Movies />
       </div>
-      </div>
+      <Form />
+      <FormModal />
+    </BrowserRouter>
   );
 }
 

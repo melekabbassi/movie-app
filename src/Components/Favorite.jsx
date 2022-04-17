@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import FavoriteContext from '../FavoriteContext'
 
-const Favorite = () => {
+const Favorite = (props) => {
     const {items} = useContext(FavoriteContext);
 
   return (

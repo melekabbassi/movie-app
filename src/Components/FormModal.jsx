@@ -1,7 +1,26 @@
-import {useState} from 'react'
+import * as React from 'react';
+import {useState} from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
 import Rating from '@mui/material/Rating';
 
-const Form = (props) => {
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '2000',
+  bgcolor: 'transparent',
+  border: 'none',  
+};
+
+export default function FormModal(props) {
+
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
     const [title, setTitle] = useState('');
     const [year, setYear] = useState('');
     const [description, setDescription] = useState('');
@@ -10,7 +29,15 @@ const Form = (props) => {
     const [rating, setRating] = useState('');
 
   return (
-    <div className="form">
+    <div>
+      <Button onClick={handleOpen}>Open modal</Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+      >
+      
+        <Box sx={style}>
+        <div className="form">
         <form>
             <div className="form-group">
                 <label title='Title'>Title</label>
@@ -43,9 +70,8 @@ const Form = (props) => {
                     onChange={(e) => setRating(e.target.value)}
                 />
             </div>
-            
         </form>
-        
+
         <button type="submit" className="btn btn-primary" 
             onClick={(e) => {
                 e.preventDefault();
@@ -61,8 +87,10 @@ const Form = (props) => {
         >
             Submit
         </button>
+        
     </div>
-    )
+        </Box>
+      </Modal>
+    </div>
+  );
 }
-
-export default Form

@@ -1,27 +1,33 @@
 import React from 'react'
 import Popcorn from '../Images/popcorn.svg'
 import { Link } from 'react-router-dom'
-// import FavoriteContext from '../FavoriteContext'
-// import { useContext } from 'react'
 
 export const Nav = () => {
-    // const {items} = useContext(FavoriteContext);
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <Link to={"/"}>
-            <img src={Popcorn} alt="" className='logo'/>
-            {/* <span>{items.length}</span> */}
-        </Link>
-        <Link to={"/"} className="navbar-items">
-            <h2>Home</h2>
-        </Link>
-        <Link to={"/Favorite"} className="navbar-items">
-            <h2>Favorite</h2>
-        </Link>
-        <Link to={"/Form"} className="navbar-items">
-            <h2>Form</h2>
-        </Link>
+        <li>
+            <Link to={"/"}>
+                <img src={Popcorn} alt="" className='logo'/>
+            </Link>
+        </li>
 
+        <li>
+            <Link to={"/"} className="navbar-items">
+                <h2>Home</h2>
+            </Link>
+        </li>
+        
+        <li>
+            <Link to={"/Favorite"} className="navbar-items">
+                <h2>Favorite</h2>
+            </Link>
+        </li>
+        
+        <li>
+            <Link to={"/Form"} className="navbar-items">
+                <h2>Form</h2>
+            </Link>
+        </li>
         <input className="search" type="text" placeholder="Search" />
     </nav>
 
