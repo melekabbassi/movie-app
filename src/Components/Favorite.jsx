@@ -1,23 +1,16 @@
 import React from 'react'
-import { useContext } from 'react'
-import FavoriteContext from '../FavoriteContext'
 
 const Favorite = (props) => {
-    const {items} = useContext(FavoriteContext);
-
-  return (
-    <div>
-        <h1>Favorite</h1>
-        <div className='fav-movie-list'>
-            {items.map((item) => (
-                <div className='fav-movie-box'>
-                    <h1>{item.title}</h1>
-                    <h2>{item.year}</h2>
-                </div>
-            ))}
-        </div>
+    
+  return props.movies.map((movie) => (
+    <div className="favorite">
+        <img src={movie.image} alt="poster" />
+        <h3>{movie.title}</h3>
+        <p>{movie.description}</p>
+        <p>{movie.genre}</p>
+        <p>{movie.rating}</p>
     </div>
-  )
+  ));
 }
 
 export default Favorite
