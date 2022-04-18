@@ -32,7 +32,7 @@ function App() {
             <Movies movies={movies} />
           </Route>
 
-          <Route path="/Favorite" component={<Favorite />}>
+          <Route path="/Favorite" component={<Favorite movies={movies}/>}>
             <Favorite addMovie={addMovie} />
           </Route>
           
@@ -41,7 +41,6 @@ function App() {
           </Route>
         </Switch>
       </div>
-
       </div>
     </BrowserRouter>
   );
