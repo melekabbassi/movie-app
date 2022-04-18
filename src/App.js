@@ -5,6 +5,8 @@ import Movies from './Components/Movies';
 import Favorite from './Components/Favorite';
 import Form from './Components/Form';
 import FormModal from './Components/FormModal';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -43,7 +45,8 @@ function App() {
       </div>
       
       </div>
-      <FormModal />
+      <Login />
+      <Signup />
     </BrowserRouter>
   );
 }

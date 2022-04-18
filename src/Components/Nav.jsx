@@ -1,10 +1,13 @@
 import React from 'react'
 import Popcorn from '../Images/popcorn.svg'
+import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { Link } from 'react-router-dom'
 
 export const Nav = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul >
         
         <li>
             <Link to={"/"}>
@@ -19,18 +22,22 @@ export const Nav = () => {
         </li>
         
         <li>
-            <Link to={"/Favorite"} className="navbar-items">
+            <Link to={"/favorite"} className="navbar-items">
                 <h3>Favorite</h3>
             </Link>
         </li>
         
         <li>
-            <Link to={"/Form"} className="navbar-items">
+            <Link to={"/form"} className="navbar-items">
                 <h3>Form</h3>
             </Link>
         </li>
         <input className="search" type="text" placeholder="Search" />
-    </nav>
+
+        <li><button className='login-btn'><LoginIcon className="login-icon" /></button></li>
+
+    </ul>
+    </div>
 
   )
 }
