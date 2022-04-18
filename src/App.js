@@ -36,8 +36,8 @@ function App() {
             <Favorite addMovie={addMovie} />
           </Route>
           
-          <Route path="/Form" component={<Form />}>
-            <Form />
+          <Route path="/Form" component={<FormModal />}>
+            <FormModal />
           </Route>
         </Switch>
       </div>

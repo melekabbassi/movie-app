@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 export const Nav = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        
         <li>
             <Link to={"/"}>
                 <img src={Popcorn} alt="" className='logo'/>
