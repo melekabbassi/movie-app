@@ -32,10 +32,11 @@ function App() {
             <Movies movies={movies} />
           </Route>
 
-          <Route path="/Favorite" component={Favorite}>
+          <Route path="/Favorite" component={<Favorite />}>
             <Favorite addMovie={addMovie} />
           </Route>
-          <Route path="/Form" component={Form}>
+          
+          <Route path="/Form" component={<Form />}>
             <Form />
           </Route>
         </Switch>
