@@ -41,7 +41,9 @@ function App() {
           </Route>
         </Switch>
       </div>
+      
       </div>
+      <FormModal />
     </BrowserRouter>
   );
 }
