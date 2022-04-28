@@ -24,31 +24,6 @@ function App() {
     setMovies(movies.concat(newMovie));
   }
 
-  // return (
-  //   <BrowserRouter>
-  //     <div className="App">
-  //       <Nav />
-  //     <div className="container">      
-  //       <Switch>
-  //         <Route path="/">
-  //           <Movies movies={movies} />
-  //         </Route>
-
-  //         <Route path="/Favorite" component={<Favorite movies={movies}/>}>
-  //           <Favorite addMovie={addMovie} />
-  //         </Route>
-          
-  //         <Route path="/Form" component={<FormModal />}>
-  //           <FormModal />
-  //         </Route>
-  //       </Switch>
-  //     </div>
-      
-  //     </div>
-  //     <Login />
-  //     <Signup />
-  //   </BrowserRouter>
-  // );
   return (
     <BrowserRouter>
       <div className="App">
