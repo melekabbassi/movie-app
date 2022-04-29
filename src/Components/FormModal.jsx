@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {useState} from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Rating from '@mui/material/Rating';
 
@@ -30,7 +29,7 @@ export default function FormModal(props) {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <a href className='form-a' onClick={handleOpen}>Form</a>
       <Modal
         open={open}
         onClose={handleClose}

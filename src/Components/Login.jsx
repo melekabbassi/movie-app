@@ -3,6 +3,9 @@ import {useState} from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
+import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
+import Signup from './Signup';
 
 const style = {
   position: 'absolute',
@@ -38,12 +41,9 @@ const Login = () => {
         }
     }
 
-
-
-
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button onClick={handleOpen}><LoginIcon className="login-icon" /></Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -62,7 +62,7 @@ const Login = () => {
                 <div className="login-btns">
                 <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Login</button>
 
-                <button type="submit" className="btn btn-primary">Sign Up</button>
+                <button type="submit" className="btn btn-primary"><Signup /></button>
                 </div>
 
             </div>

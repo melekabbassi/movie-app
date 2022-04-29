@@ -130,6 +130,24 @@ li{
   border: none;
 }
 
+.form-a{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+  font-family: "Montserrat",sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+  background-color: none;
+}
+
+.form-a:hover{
+  color: #0088a9;
+}
+
 /* Form styling */
 
 .form {
@@ -215,6 +233,7 @@ label{
   color: #fff;
   background-color: #00708f;
   border-color: #00708f;
+  cursor: pointer;
 }
 
 /* Login Modal styling */

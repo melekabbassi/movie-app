@@ -23,6 +23,7 @@ const Signup = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
+    
     const handleUsername = (e) => {
         setUsername(e.target.value);
     }
@@ -33,18 +34,9 @@ const Signup = () => {
         setEmail(e.target.value);
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (username === 'admin' && password === 'admin') {
-            handleClose();
-        } else {
-            alert('Username or Password is incorrect');
-        }
-    }
-
     return (
         <div>
-          <Button onClick={handleOpen}>Open modal</Button>
+          <a href className='signup-a' onClick={handleOpen}>Sign Up</a>
           <Modal
             open={open}
             onClose={handleClose}

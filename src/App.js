@@ -7,7 +7,7 @@ import Form from './Components/Form';
 import FormModal from './Components/FormModal';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
-import {BrowserRouter, Switch, Route } from 'react-router-dom';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   
@@ -28,22 +28,15 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Nav />
-        <Switch>      
-          <Route path="/">
-            <Movies />
-          </Route>
+        <Routes>      
+          <Route path="/" element={<Movies />} />
 
-          <Route path="/favorite">
-            <Favorite />
-          </Route>
+          <Route path="/favorite" element={<Favorite />} />
           
-          <Route path="/form">
-            <FormModal />
-          </Route>
-      </Switch>
+          <Route path="/form" element={<FormModal />} />
+            
+      </Routes>
       </div>
-      <Login />
-      <Signup />
     </BrowserRouter>
   );
 }
