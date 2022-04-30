@@ -29,9 +29,7 @@ export const Nav = () => {
         </li>
         
         <li>
-            <Link to={"/form"} className="navbar-items">
-                <FormModal />
-            </Link>
+                <FormModal className="navbar-items" />
         </li>
         <input className="search" type="text" placeholder="Search" />
 

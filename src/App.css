@@ -236,6 +236,10 @@ label{
   cursor: pointer;
 }
 
+.form-a{
+  cursor: pointer;
+}
+
 /* Login Modal styling */
 
 .login-btns{
