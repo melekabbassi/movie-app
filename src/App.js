@@ -1,5 +1,6 @@
 import './App.css';
 import {useState, useEffect} from 'react';
+import axios from 'axios';
 import Nav from './Components/Nav';
 import Movies from './Components/Movies';
 import Favorite from './Components/Favorite';
@@ -13,6 +14,7 @@ function App() {
   
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [error, setError] = useState('');
 
   const addMovie = (title, year, rating, image, description) => {
     const newMovie = {

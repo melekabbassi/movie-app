@@ -3,6 +3,7 @@ import {useState} from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
+import axios from 'axios';
 
 const style = {
   position: 'absolute',
@@ -20,19 +21,26 @@ const Signup = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
-    
-    const handleUsername = (e) => {
-        setUsername(e.target.value);
+    const [user, setUser] = useState({
+        name: "",
+        email: "",
+        password: "",
+    });
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setUser({...user, [name]: value});
     }
-    const handlePassword = (e) => {
-        setPassword(e.target.value);
-    }
-    const handleEmail = (e) => {
-        setEmail(e.target.value);
-    }
+
+    const register = () => {
+      const {name, email, password} = user;
+      if (name && email && password) {
+        axios.post("http://localhost:3000/users", user).then(res => console.log(res))
+      } 
+      else {
+          console.log("invalid");
+        }
+      }
 
     return (
         <div>
@@ -47,16 +55,16 @@ const Signup = () => {
             <form>
                 <div className="form-group">
                     <label>Username</label>
-                    <input type="text" className="form-control" id="username" placeholder="Username" />
+                    <input type="text" className="form-control" id="username" value={user.name} onChange={handleChange} placeholder="Username" />
     
                     <label>Password</label>
-                    <input type="password" className="form-control" id="password" placeholder="Password" />
+                    <input type="password" className="form-control" id="password" value={user.password} onChange={handleChange} placeholder="Password" />
 
                     <label>Confirm Password</label>
-                    <input type="password" className="form-control" id="password" placeholder="Confirm Password" />
+                    <input type="password" className="form-control" id="password" value={user.password} onChange={handleChange} placeholder="Confirm Password" />
 
                     <label>Email</label>
-                    <input type="email" className="form-control" id="email" placeholder="Email" />
+                    <input type="email" className="form-control" id="email" value={user.email} onChange={handleChange} placeholder="Email" />
                     <br />
                     <label>
                         <input type="checkbox" />
@@ -64,7 +72,7 @@ const Signup = () => {
                     </label>
 
                     <div className="login-btns">
-                    <button type="submit" className="btn btn-primary">Sign Up</button>
+                    <button type="submit" className="btn btn-primary" onClick={register} >Sign Up</button>
                     </div>
     
                 </div>

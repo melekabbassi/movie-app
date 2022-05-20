@@ -6,6 +6,8 @@ import Modal from '@mui/material/Modal';
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Signup from './Signup';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const style = {
   position: 'absolute',
@@ -17,28 +19,29 @@ const style = {
   border: 'none',  
 };
 
-const Login = () => {
+const Login = ({setLoginUser}) => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const history = useNavigate();
+    const [user, setUser] = useState({
+        name: "",
+        password: ""
+    });
 
-    const handleUsername = (e) => {
-        setUsername(e.target.value);
-    }
-    const handlePassword = (e) => {
-        setPassword(e.target.value);
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setUser({...user, [name]: value});
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (username === 'admin' && password === 'admin') {
-            handleClose();
-        } else {
-            alert('Username or Password is incorrect');
-        }
+    const login = () => {
+      axios.post("http://localhost:3000/users", user).then(res => { alert(res.data.message);
+        setLoginUser(res.data.user);
+        history.push("/");
+      }).catch(err => {
+        alert(err.response.data.message);
+      });
     }
 
   return (
@@ -54,15 +57,16 @@ const Login = () => {
         <form>
             <div className="form-group">
                 <label>Username</label>
-                <input type="text" className="form-control" id="username" placeholder="Username" />
+                <input type="text" className="form-control" id="username" value={user.name} onChange={handleChange} placeholder="Username" />
 
                 <label>Password</label>
-                <input type="password" className="form-control" id="password" placeholder="Password" />
+                <input type="password" className="form-control" id="password" value={user.password} onChange={handleChange} placeholder="Password" />
                 
                 <div className="login-btns">
-                <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Login</button>
+                <button type="submit" className="btn btn-primary" onClick={login}>Login</button>
 
-                <button type="submit" className="btn btn-primary"><Signup /></button>
+                {/* <button type="submit" className="btn btn-primary"><Signup /></button> */}
+                <li className = "btn btn-primary"> <Signup /></li>
                 </div>
 
             </div>
