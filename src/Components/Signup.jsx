@@ -35,7 +35,7 @@ const Signup = () => {
     const register = () => {
       const {name, email, password} = user;
       if (name && email && password) {
-        axios.post("http://localhost:3000/users", user).then(res => console.log(res))
+        axios.post("http://localhost:3000/users/login", user).then(res => console.log(res))
       } 
       else {
           console.log("invalid");

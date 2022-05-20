@@ -36,7 +36,7 @@ const Login = ({setLoginUser}) => {
     }
 
     const login = () => {
-      axios.post("http://localhost:3000/users", user).then(res => { alert(res.data.message);
+      axios.post("http://localhost:3000/users/login", user).then(res => { alert(res.data.message);
         setLoginUser(res.data.user);
         history.push("/");
       }).catch(err => {
