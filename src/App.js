@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Nav from './Components/Nav';
 import Movies from './Components/Movies';
 import Favorite from './Components/Favorite';
