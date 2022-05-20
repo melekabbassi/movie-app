@@ -14,7 +14,7 @@ function App() {
   
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(false);
 
   // const addMovie = (title, year, rating, image, description) => {
   //   const newMovie = {
@@ -38,7 +38,7 @@ function App() {
 
   const getData = () => {
     axios
-      .get(`http://localhost:3000/movies`)
+      .get("http://localhost:3000/movies")
       .then((result) => {
         setMovies(result.data);
         setError(false);
@@ -48,10 +48,9 @@ function App() {
       });
   };
   useEffect(() => {
-    getData();
+    getData();  
   }, []);
   
-  console.log(movies);
   return (
     <BrowserRouter>
       <div className="App">
