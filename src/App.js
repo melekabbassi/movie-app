@@ -12,9 +12,7 @@ import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   
-  const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
-  const [error, setError] = useState(false);
 
   // const addMovie = (title, year, rating, image, description) => {
   //   const newMovie = {
@@ -35,21 +33,6 @@ function App() {
     };
     setFavorites(favorites.concat(newFavorite));
   }
-
-  const getData = () => {
-    axios
-      .get("http://localhost:3000/movies")
-      .then((result) => {
-        setMovies(result.data);
-        setError(false);
-      })
-      .catch((error) => {
-        setError(true);
-      });
-  };
-  useEffect(() => {
-    getData();  
-  }, []);
   
   return (
     <BrowserRouter>
