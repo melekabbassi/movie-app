@@ -4,29 +4,28 @@ import axios from 'axios';
 import Nav from './Components/Nav';
 import Movies from './Components/Movies';
 import Favorite from './Components/Favorite';
-import Form from './Components/Form';
+// import Form from './Components/Form';
 import FormModal from './Components/FormModal';
-import Login from './Components/Login';
-import Signup from './Components/Signup';
+// import Login from './Components/Login';
+// import Signup from './Components/Signup';
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
-  const [content, getContent] = useState([]);
   const [error, setError] = useState('');
 
-  const addMovie = (title, year, rating, image, description) => {
-    const newMovie = {
-      title: title,
-      year: year,
-      description: description,
-      image: image,
-      rating: rating
-    };
-    setMovies(movies.concat(newMovie));
-  }
+  // const addMovie = (title, year, rating, image, description) => {
+  //   const newMovie = {
+  //     title: title,
+  //     year: year,
+  //     description: description,
+  //     image: image,
+  //     rating: rating
+  //   };
+  //   setMovies(movies.concat(newMovie));
+  // }
 
   const addFavorite = (title, year, id) => {
     const newFavorite = {
@@ -41,7 +40,7 @@ function App() {
     axios
       .get(`http://localhost:3000/movies`)
       .then((result) => {
-        getContent(result.data);
+        setMovies(result.data);
         setError(false);
       })
       .catch((error) => {
@@ -52,7 +51,7 @@ function App() {
     getData();
   }, []);
   
-  console.log(content);
+  console.log(movies);
   return (
     <BrowserRouter>
       <div className="App">
