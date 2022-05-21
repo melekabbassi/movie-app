@@ -4,21 +4,23 @@ import { useState } from 'react';
 
 const Card = (props) => {
   const [favorite, setFavorite] = useState(null);
+  
   return (
-    <div className="card">
-      <div className="card-image">
-        <img src={props.poster} alt={props.title} />
-      </div>
-      <div className="card-content">
-        <h3 className="card-title">title: {props.title}</h3>
-        <p className="card-subtitle">year: {props.year}</p>
-        <p className="card-description">description: {props.description}</p>
-        <p className="card-rating"> rating: {props.rating}</p>
-      </div>
-      <div className="card-action">
-        <FavBtn favorite={favorite} setFavorite={setFavorite} />
-      </div>
-    </div>
+    <div class="hero-container">
+		<div class="main-container">
+			<div class="poster-container">
+				<img src={props.poster} alt={props.title} className="images" />
+			</div>
+			<div className="card-container">
+				<div className="card-content">
+					<h4 className="card-title">{props.title}</h4>
+          <p className="card-release">{props.year}</p>
+					<p className="card-rating">Rating: {props.rating}</p>
+          <FavBtn favorite={favorite} setFavorite={setFavorite} />
+				</div>
+			</div>
+		</div>
+	</div>
   );
 }
 
