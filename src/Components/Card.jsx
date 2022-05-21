@@ -11,7 +11,7 @@ const Card = (props) => {
     <FavBtn onClick={(e) => {
         console.log(props)
         e.preventDefault()
-        props.addFavorite(props.title, props.year, props.id)
+        props.addFavorite()
     }}  />
     
   </div>

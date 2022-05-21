@@ -4,7 +4,7 @@ const Favorite = (props) => {
     
   return props.movies.map((movie) => (
     <div className="favorite">
-        <img src={movie.image} alt="poster" />
+        <img src={movie.poster} alt="poster" />
         <h3>{movie.title}</h3>
         <p>{movie.description}</p>
         <p>{movie.genre}</p>
