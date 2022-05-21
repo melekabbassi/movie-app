@@ -12,28 +12,6 @@ import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   
-  const [favorites, setFavorites] = useState([]);
-
-  // const addMovie = (title, year, rating, image, description) => {
-  //   const newMovie = {
-  //     title: title,
-  //     year: year,
-  //     description: description,
-  //     image: image,
-  //     rating: rating
-  //   };
-  //   setMovies(movies.concat(newMovie));
-  // }
-
-  const addFavorite = (title, year, id) => {
-    const newFavorite = {
-      title: title,
-      year: year,
-      id: id
-    };
-    setFavorites(favorites.concat(newFavorite));
-  }
-  
   return (
     <BrowserRouter>
       <div className="App">
@@ -41,9 +19,8 @@ function App() {
         <Routes>      
           <Route path="/" element={<Movies />} />
 
-          <Route path="/favorite" element={<Favorite addFavorite={addFavorite} />} />      
+          <Route path="/favorite" element={<Favorite />} />      
         </Routes>
-          <FormModal/>
       </div>
     </BrowserRouter>
   );

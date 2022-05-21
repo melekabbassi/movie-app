@@ -5,6 +5,11 @@ import { useState } from 'react';
 const Card = (props) => {
   const [favorite, setFavorite] = useState([]);
 
+  const addFavorite = (movie) => {
+    setFavorite([...favorite, movie]);
+    console.log(favorite);
+  };
+
   return (
     <div class="hero-container">
 		<div class="main-container">
@@ -16,7 +21,7 @@ const Card = (props) => {
 					<h4 className="card-title">{props.title}</h4>
           <p className="card-release">{props.year}</p>
 					<p className="card-rating">Rating: {props.rating}</p>
-          <FavBtn favorite={favorite} setFavorite={setFavorite} />
+          <FavBtn favorite={favorite} setFavorite={addFavorite} />
 				</div>
 			</div>
 		</div>

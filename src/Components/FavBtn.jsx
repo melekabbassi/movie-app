@@ -3,7 +3,7 @@ import Star from '@mui/icons-material/Star';
 
 
 const FavBtn = () => {
-    const [favorite, setFavorite] = useState(null);
+    const [favorite, setFavorite] = useState([]);
 
   return (
       

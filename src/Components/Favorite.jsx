@@ -1,16 +1,13 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 
 const Favorite = (props) => {
-    
-  return props.movies.map((movie) => (
-    <div className="favorite">
-        <img src={movie.poster} alt="poster" />
-        <h3>{movie.title}</h3>
-        <p>{movie.description}</p>
-        <p>{movie.genre}</p>
-        <p>{movie.rating}</p>
+
+  return (
+    <div className="fav">
+      <h1>Favorite</h1>
     </div>
-  ));
+  );
 }
 
 export default Favorite
