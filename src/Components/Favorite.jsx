@@ -1,12 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
+import Card from './Card'
 
 const Favorite = (props) => {
   const data = useSelector(state => state.favorite);
 	const dispatch = useDispatch();
-
-  
 
   return (
     <div className="fav">

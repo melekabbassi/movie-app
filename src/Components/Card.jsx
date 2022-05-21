@@ -22,8 +22,7 @@ const Card = (props) => {
           			<p className="card-release">{props.year}</p>
 					<p className="card-rating">Rating: {props.rating}</p>
 					<button className='fav-button-wrapper' onClick={() => dispatch({ type: 'ADD_FAVORITE', payload: props })}>
-						<Star className='fav-button-icon' />
-						
+						<Star className='fav-button-icon' />	
 					</button>
 				</div>
 			</div>
