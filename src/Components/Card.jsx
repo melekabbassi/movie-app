@@ -20,14 +20,14 @@ const Card = (props) => {
 					<h4 className="card-title">{props.title}</h4>
           			<p className="card-release">{props.year}</p>
 					<p className="card-rating">Rating: {props.rating}</p>
-					<button className='fav-button-wrapper' onClick={() => dispatch({type: 'ADD_FAVORITE', payload: props.title})}>
+					<button className='fav-button-wrapper' onClick={() => dispatch({ type: 'ADD_FAVORITE', payload: props })}>
 						<Star className='fav-button-icon' />
 						
 					</button>
 				</div>
 			</div>
 		</div>
-		{console.log(props.favorite)}
+		{console.log(props.title)}
 	</div>
 	
   );

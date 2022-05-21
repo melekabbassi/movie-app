@@ -12,7 +12,7 @@ const Favorite = (props) => {
     <div className="fav">
       <h1>Favorite List</h1>
 
-      {/* {props.favorite.map(item => (
+      {props.favorite.map(item => (
         <div className="fav-item">
           <div className="fav-item-content">
             <h3>{item.title}</h3>
@@ -22,13 +22,13 @@ const Favorite = (props) => {
           <div className="fav-item-icon">
             <button
               className="fav-item-icon-button"
-              onClick={() => dispatch({ type: 'REMOVE_FAVORITE', payload: item.id })}
+              onClick={() => dispatch({ type: 'REMOVE_FAVORITE', payload: props.id })}
             >
               Remove
             </button>
           </div>
         </div>
-      ))} */}
+      ))}
     </div>
       
 
