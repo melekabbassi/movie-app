@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from './Card'
 
-const Movies = () => {
+const Movies = (props) => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(false);
 
@@ -26,6 +26,14 @@ const Movies = () => {
     getData();  
   }, []);
     
+  const filteredMovies = movies.filter((el) => {
+    if(props.input === ""){
+      return el;
+    } else {
+      return el.title.toLowerCase().includes(props.input);
+    }
+  });
+
   //console.log(movies);
   return (
     <div className='movie-list'>

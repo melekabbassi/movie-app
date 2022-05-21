@@ -11,7 +11,7 @@ const Favorite = (props) => {
     <div className="fav">
       <h1>Favorite List</h1>
 
-      {props.favorite.map(item => (
+      {/* {props.favorite.map(item => (
         <div className="fav-item">
           <div className="fav-item-content">
             <h3>{item.title}</h3>
@@ -27,7 +27,7 @@ const Favorite = (props) => {
             </button>
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
       
 
