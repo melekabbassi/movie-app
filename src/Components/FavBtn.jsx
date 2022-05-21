@@ -8,9 +8,6 @@ const FavBtn = () => {
   return (
       
     <div className="caption">
-        <div className="title-wrapper">
-                <p className='title'>eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-        </div>
         <button
             onClick={() => setFavorite(!favorite)}
             className="fav-button-wrapper"
