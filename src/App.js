@@ -11,7 +11,6 @@ import FormModal from './Components/FormModal';
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-  
   return (
     <BrowserRouter>
       <div className="App">

@@ -1,31 +1,35 @@
 import React from 'react'
-import FavBtn from './FavBtn'
+// import FavBtn from './FavBtn'
+import Star from '@mui/icons-material/Star';
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Card = (props) => {
-  const [favorite, setFavorite] = useState([]);
-
-  const addFavorite = (movie) => {
-    setFavorite([...favorite, movie]);
-    console.log(favorite);
-  };
+	
+	const favorite = useSelector(state => state.favorite);
+	const dispatch = useDispatch();
 
   return (
-    <div class="hero-container">
-		<div class="main-container">
-			<div class="poster-container">
+    <div className="hero-container">
+		<div className="main-container">
+			<div className="poster-container">
 				<img src={props.poster} alt={props.title} className="images" />
 			</div>
 			<div className="card-container">
 				<div className="card-content">
 					<h4 className="card-title">{props.title}</h4>
-          <p className="card-release">{props.year}</p>
+          			<p className="card-release">{props.year}</p>
 					<p className="card-rating">Rating: {props.rating}</p>
-          <FavBtn favorite={favorite} setFavorite={addFavorite} />
+					<button className='fav-button-wrapper' onClick={() => dispatch({type: 'ADD_FAVORITE', payload: props.title})}>
+						<Star className='fav-button-icon' />
+						
+					</button>
 				</div>
 			</div>
 		</div>
+		{console.log(props.favorite)}
 	</div>
+	
   );
 }
 

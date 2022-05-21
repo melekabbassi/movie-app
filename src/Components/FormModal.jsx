@@ -30,7 +30,7 @@ export default function FormModal(props) {
 
   return (
     <div>
-      <a href className='form-a' onClick={handleOpen}>Form</a>
+      <a href className='form-a' onClick={handleOpen}>Upload</a>
       <Modal
         open={open}
         onClose={handleClose}
