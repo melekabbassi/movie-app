@@ -1,10 +1,9 @@
 import React from 'react'
 import FavBtn from './FavBtn'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Card = (props) => {
   const [favorite, setFavorite] = useState(null);
-    {/* movie card to have the title and poster of movies */}
   return (
     <div className="card">
       <div className="card-image">
