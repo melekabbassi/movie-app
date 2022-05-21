@@ -30,7 +30,7 @@ const Movies = () => {
   return (
     <div className='movie-list'>
         {movies.map((movie) => (
-          <Card title={movie.title} description = {movie.description} year = {movie.year} poster = {movie.poster} rating = {movie.rating} />
+          <Card title={movie.title} description = {movie.description} year = {movie.year} poster = {movie.poster} rating = {movie.rating} trailer = {movie.trailer} />
         ))} 
     </div>
   )

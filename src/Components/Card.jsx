@@ -13,7 +13,8 @@ const Card = (props) => {
     <div className="hero-container">
 		<div className="main-container">
 			<div className="poster-container">
-				<img src={props.poster} alt={props.title} className="images" />
+				<a href={props.trailer}> <img src={props.poster} alt={props.title} className="images" /> </a>
+				
 			</div>
 			<div className="card-container">
 				<div className="card-content">
@@ -27,7 +28,6 @@ const Card = (props) => {
 				</div>
 			</div>
 		</div>
-		{console.log(props.title)}
 	</div>
 	
   );
