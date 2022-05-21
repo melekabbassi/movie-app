@@ -3,8 +3,8 @@ import FavBtn from './FavBtn'
 import { useState } from 'react';
 
 const Card = (props) => {
-  const [favorite, setFavorite] = useState(null);
-  
+  const [favorite, setFavorite] = useState([]);
+
   return (
     <div class="hero-container">
 		<div class="main-container">
