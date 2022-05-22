@@ -17,6 +17,7 @@ function App() {
         <Nav />
         <Routes>      
           <Route path="/" element={<Movies />} />
+          <Route path="/search/:search" element={<Movies />} />
 
           <Route path="/favorite" element={<Favorite />} />      
         </Routes>

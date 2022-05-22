@@ -2,11 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from './Card'
+import { useParams } from 'react-router-dom';
 
 const Movies = (props) => {
   const [movies, setMovies] = useState([]);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
 
+  
   const getData = () => {
     axios
       .get("http://localhost:3000/movies")
@@ -26,15 +28,17 @@ const Movies = (props) => {
     getData();  
   }, []);
     
-  const filteredMovies = movies.filter((el) => {
-    if(props.input === ""){
-      return el;
-    } else {
-      return el.title.toLowerCase().includes(props.input);
+  let { search } = useParams();
+  const pathname = window.location.pathname;
+  
+  useEffect(() => {
+    if (pathname === "/Search=" + search) {
+      setMovies(movies.filter((movie) => movie.title.includes(search)));
+    }else{
+      <></>
     }
-  });
+  }, [movies, pathname, search]);
 
-  //console.log(movies);
   return (
     <div className='movie-list'>
         {movies.map((movie) => (
