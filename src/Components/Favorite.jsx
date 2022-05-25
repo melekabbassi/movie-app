@@ -1,16 +1,17 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import Card from './Card'
 
 const Favorite = (props) => {
-    
-  return props.movies.map((movie) => (
-    <div className="favorite">
-        <img src={movie.image} alt="poster" />
-        <h3>{movie.title}</h3>
-        <p>{movie.description}</p>
-        <p>{movie.genre}</p>
-        <p>{movie.rating}</p>
+  const data = useSelector(state => state.favorite);
+	const dispatch = useDispatch();
+  
+  return (
+    <div className="fav">
+      <h1>Favorite List</h1>   
     </div>
-  ));
-}
+  );
+};
 
 export default Favorite

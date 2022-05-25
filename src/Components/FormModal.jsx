@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {useState} from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import Rating from '@mui/material/Rating';
+import { Route } from 'react-router-dom';
 
 const style = {
   position: 'absolute',
@@ -30,7 +30,7 @@ export default function FormModal(props) {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <a href className='form-a' onClick={handleOpen}>Upload</a>
       <Modal
         open={open}
         onClose={handleClose}
@@ -72,6 +72,7 @@ export default function FormModal(props) {
             </div>
         </form>
 
+
         <button type="submit" className="btn btn-primary" 
             onClick={(e) => {
                 e.preventDefault();
@@ -85,7 +86,8 @@ export default function FormModal(props) {
             }
             }
         >
-            Submit
+        Submit
+            
         </button>
         
     </div>
